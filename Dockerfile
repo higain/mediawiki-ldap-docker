@@ -8,10 +8,10 @@ RUN \
   rm dotdeb.gpg
   
 RUN apt-get -qq update && \
-  apt-get -yqq install php7.0-ldap php-ldap libldap2-dev
+  apt-get -yqq install php7.0-ldap libldap2-dev
   
 RUN docker-php-ext-configure ldap --with-libdir=lib/x86_64-linux-gnu/ && \
     docker-php-ext-install ldap
     
-RUN set -x; \
+RUN set -x && \
     sed -i 's/rtrim/trim/' /var/www/html/extensions/LdapAuthentication/LdapAuthentication.php
