@@ -8,6 +8,6 @@ RUN \
   rm dotdeb.gpg
   
 RUN apt-get -qq update && \
-  apt-get -yqq install php7.0-ldap
+  apt-get -yqq install php7.0-ldap php-ldap
   
-# RUN service apache2 reload
+RUN service apache2 restart &
