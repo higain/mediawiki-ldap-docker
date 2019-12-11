@@ -13,5 +13,5 @@ RUN apt-get -qq update && \
 RUN docker-php-ext-configure ldap --with-libdir=lib/x86_64-linux-gnu/ && \
     docker-php-ext-install ldap
     
-RUN set -x && \
-    sed -i 's/rtrim/trim/' /var/www/html/extensions/LdapAuthentication/LdapAuthentication.php
+# RUN set -x && \
+#     sed -i 's/rtrim/trim/' /var/www/html/extensions/LdapAuthentication/LdapAuthentication.php
